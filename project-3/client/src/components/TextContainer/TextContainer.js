@@ -6,11 +6,7 @@ import onlineIcon from '../../icons/onlineIcon.png';
 const TextContainer = ({ users }) => (
   <div className="textContainer">
     <div>
-      <h1>Welcome To Our App (name pending) <span role="img" aria-label="emoji">💬</span></h1>
-      <br/>
-      <br/>
-      <br/>
-      <h2>Chat with the other members of the room <span role="img" aria-label="emoji">⬅️</span></h2>
+      <h2>Chat with the other members of the room <span role="img" aria-label="emoji"></span></h2>
     </div>
     {
       users

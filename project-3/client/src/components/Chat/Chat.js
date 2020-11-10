@@ -8,6 +8,7 @@ import TextContainer from '../TextContainer/TextContainer';
 import Messages from '../Messages/Messages';
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
+import Video from '../Video/Video';
 
 const ENDPOINT = 'https://in-touch-chat.herokuapp.com/';
 
@@ -62,7 +63,12 @@ const Chat = ({ location }) => {
   }
 
   return (
-    <div className="outerContainer">
+    <span style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap'}}>
+    <div className="videoContainer" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+          <Video />
+      </div>
+    <div className="outerContainer" style={{textAlign: 'center', border: '1px solid black', padding: '30px'}}>
+
       <div className="container">
           <InfoBar room={room} />
           <Messages messages={messages} name={name} />
@@ -70,6 +76,7 @@ const Chat = ({ location }) => {
       </div>
       <TextContainer users={users}/>
     </div>
+    </span>
   );
 }
 

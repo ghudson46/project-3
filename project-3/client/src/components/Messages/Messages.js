@@ -6,7 +6,7 @@ import Message from './Message/Message';
 
 // A container that renders every message
 const Messages = ({ messages, name }) => (
-  <ScrollToBottom className="messages">
+  <ScrollToBottom className="messages" style={{backgroundColor: 'gray'}}>
     {messages.map((message, i) => <div key={i}><Message message={message} name={name}/></div>)}
   </ScrollToBottom>
 );
