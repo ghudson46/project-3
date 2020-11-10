@@ -20,7 +20,7 @@ function App() {
         <NavBar />
         <div className="container">
           <Switch>
-            <Route path='/' exact component={Home} />
+            <Route exact path='/' component={Home} />
             <Route path='/profile' component={Profile} />
             <Route path='/join' component={Join} />
             <Route path = '/chat' component={Chat} />

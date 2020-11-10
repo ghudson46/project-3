@@ -1,8 +1,17 @@
 import React from 'react'
+import LoginButton from '../Authentication/LoginButton'
+import SignupButton from '../Authentication/SignupButton.js'
 
 function AuthNav() {
     return (
-        <p>auth nav</p>
+        <div>
+        <ul style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
+            <ul>
+                <LoginButton />
+                <SignupButton />
+            </ul>
+        </ul>
+    </div>
     )
 }
 

@@ -8,7 +8,7 @@ class Video extends React.Component{
   
       this.state = {
         inputValue : "",
-        url:""
+        url:"https://www.youtube.com/watch?v=SMKPKGW083c"
       }
     }
   

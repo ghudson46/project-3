@@ -1,17 +1,13 @@
-import React from 'react';
-import LoginButton from '../components/Authentication/LoginButton'
-import LogoutButton from '../components/Authentication/LogoutButton';
-
+import React from 'react'
+import LogoutButton from '../components/Authentication//LogoutButton'
 
 function Home() {
     return (
-        <>
-            <h1>Home Page</h1>
-            <LoginButton />
+        <div>
+            <h1>Welcome to our app</h1>
             <LogoutButton />
-        </>
+        </div>
     )
 }
 
 export default Home
-
