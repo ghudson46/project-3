@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import Chat from './Chat/Chat';
 import Join from '../pages/Join';
-import Profile from './Validation/Profile';
+import Profile from './Authentication/Profile';
 import Home from '../pages/Home';
 
 const AppRouter = () => (

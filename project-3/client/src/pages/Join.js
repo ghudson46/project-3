@@ -8,20 +8,27 @@ function Join(props) {
   const [room, setRoom] = useState('');
 
   const { user } = useAuth0();
+
+  let nickname; 
+
+  if (!user.given_name) {
+    nickname = user.nickname.replace(/[ ,.]/g, "");
+  } else {
+    nickname = user.given_name;
+  }
   
   return (
     <div className="joinOuterContainer">
       <div className="joinInnerContainer">
         <h1 className="heading">Join A Room</h1>
         <div>
-          {/* <input placeholder="Name" className="joinInput" type="text" onChange={(event) => setName(event.target.value)} /> */}
-          <p>welcome, {user.given_name}</p>
+          <p>welcome, {nickname}</p>
         </div>
         <div>
           <input placeholder="Room" className="joinInput mt-20" type="text" onChange={(event) => setRoom(event.target.value)} />
         </div>
-        <Link onClick={e => (!user.given_name || !room) ? e.preventDefault() : null} to={`/chat?name=${user.given_name}&room=${room}`}>
-          <button className={'button mt-20'} type="submit">Sign In</button>
+        <Link onClick={e => (!nickname || !room) ? e.preventDefault() : null} to={`/chat?name=${nickname}&room=${room}`}>
+          <button className={'button mt-20'} type="submit">Join Room</button>
         </Link>
       </div>
     </div>

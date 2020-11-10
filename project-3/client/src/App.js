@@ -1,22 +1,30 @@
 import React from 'react';
-import AppRouter from './components/Router'
+import { Route, Switch } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import NavBar from './components/NavBar/NavBar'
+import Loading from './components/Loading/Loading'
+import Home from './pages/Home'
+import Profile from './pages/Profile'
+import Join from './pages/Join'
 
 
 function App() {
   const { isLoading } = useAuth0();
 
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <div><Loading /></div>
 
   return (
-    <>
-      <h1 style={{textAlign: 'center'}}>Unnamed VideoSync Application</h1>
-      <Router>
-        <AppRouter />
-      </Router>
-    </>
+      <div id="app">
+        <NavBar />
+        <div className="container">
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/profile' component={Profile} />
+            <Route path='/join' component={Join} />
+          </Switch>
+        </div>
+      </div>
   );
 }
 

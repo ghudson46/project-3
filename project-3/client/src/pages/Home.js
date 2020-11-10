@@ -1,6 +1,6 @@
 import React from 'react';
-import LoginButton from '../components/Validation/LoginButton'
-import LogoutButton from '../components/Validation/LogoutButton';
+import LoginButton from '../components/Authentication/LoginButton'
+import LogoutButton from '../components/Authentication/LogoutButton';
 
 
 function Home() {
