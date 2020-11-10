@@ -14,9 +14,9 @@ function Profile() {
         </div>
         )
         : (
-        <div>
+        <h1>
         user is not authenticated 
-        </div>
+        </h1>
         )
     )
 }

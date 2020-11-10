@@ -7,17 +7,18 @@ function Join(props) {
   // const [name, setName] = useState('');
   const [room, setRoom] = useState('');
 
-  const { user } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
 
   let nickname; 
 
-  if (!user.given_name) {
+  if (isAuthenticated && !user.given_name) {
     nickname = user.nickname.replace(/[ ,.]/g, "");
-  } else {
+  } else if (isAuthenticated && user.given_name) {
     nickname = user.given_name;
   }
   
   return (
+    isAuthenticated ? (
     <div className="joinOuterContainer">
       <div className="joinInnerContainer">
         <h1 className="heading">Join A Room</h1>
@@ -32,6 +33,10 @@ function Join(props) {
         </Link>
       </div>
     </div>
+    ) :
+    (
+      <h1>User is not authenticated</h1>
+    )
   );
 }
 

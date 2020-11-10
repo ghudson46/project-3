@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import queryString from 'query-string';
 import io from "socket.io-client";
+import { useAuth0 } from '@auth0/auth0-react'
 
 // Components
 import TextContainer from '../components/TextContainer/TextContainer';
@@ -22,6 +23,7 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const { isAuthenticated } = useAuth0();
 
   // Runs once on initial render and each time location.search changes
   useEffect(() => {
@@ -63,6 +65,7 @@ const Chat = ({ location }) => {
   }
 
   return (
+    isAuthenticated ? (
     <span style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap'}}>
     <div className="videoContainer" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           <Video />
@@ -77,6 +80,10 @@ const Chat = ({ location }) => {
       <TextContainer users={users}/>
     </div>
     </span>
+    ) :
+    (
+      <h1>User is not authenticated</h1>
+    )
   );
 }
 
