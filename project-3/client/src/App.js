@@ -7,6 +7,7 @@ import Loading from './components/Loading/Loading'
 import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Join from './pages/Join'
+import Chat from './pages/Chat'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path='/' exact component={Home} />
             <Route path='/profile' component={Profile} />
             <Route path='/join' component={Join} />
+            <Route path = '/chat' component={Chat} />
           </Switch>
         </div>
       </div>

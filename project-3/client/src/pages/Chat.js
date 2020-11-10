@@ -4,11 +4,11 @@ import queryString from 'query-string';
 import io from "socket.io-client";
 
 // Components
-import TextContainer from '../TextContainer/TextContainer';
-import Messages from '../Messages/Messages';
-import InfoBar from '../InfoBar/InfoBar';
-import Input from '../Input/Input';
-import Video from '../Video/Video';
+import TextContainer from '../components/TextContainer/TextContainer';
+import Messages from '../components/Messages/Messages';
+import InfoBar from '../components/InfoBar/InfoBar';
+import Input from '../components/Input/Input';
+import Video from '../components/Video/Video';
 
 const ENDPOINT = 'https://in-touch-chat.herokuapp.com/';
 
