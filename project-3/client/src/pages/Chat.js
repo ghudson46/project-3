@@ -9,7 +9,9 @@ import TextContainer from '../components/TextContainer/TextContainer';
 import Messages from '../components/Messages/Messages';
 import InfoBar from '../components/InfoBar/InfoBar';
 import Input from '../components/Input/Input';
-import Video from '../components/Video/Video';
+
+import './Chat.css'
+import VideoContainer from "../components/Video/VideoContainer";
 
 const ENDPOINT = 'https://in-touch-chat.herokuapp.com/';
 
@@ -68,12 +70,11 @@ const Chat = ({ location }) => {
     isAuthenticated ? (
     <span style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap'}}>
     <div className="videoContainer" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-          <Video />
+          <VideoContainer />
       </div>
     <div className="outerContainer" style={{textAlign: 'center', border: '1px solid black', padding: '30px'}}>
-
-      <div className="container">
-          <InfoBar room={room} />
+     <InfoBar room={room} />
+      <div className="container" style={{position: 'relative', bottom: '2rem', overflowY: 'auto', maxHeight: '20rem',}}>
           <Messages messages={messages} name={name} />
           <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
       </div>
