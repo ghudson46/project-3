@@ -7,9 +7,10 @@ function Profile() {
     return (
         isAuthenticated ? (
         <div>
-            <img src={user.picture} alt={user.name} />
+            <img src={user.picture} alt={user.name} style={{borderRadius: '50%', height: '10rem', width: '10rem'}}/>
             <h2>{user.name}</h2>
             <p>{user.email}</p>
+            {JSON.stringify(user, null, 2)}
             <button><a href="/join">Join Chat</a></button>
         </div>
         )
