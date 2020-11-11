@@ -4,14 +4,15 @@ import queryString from 'query-string';
 import io from "socket.io-client";
 import { useAuth0 } from '@auth0/auth0-react'
 
+import './Chat.css'
+
 // Components
 import TextContainer from '../components/TextContainer/TextContainer';
 import Messages from '../components/Messages/Messages';
 import InfoBar from '../components/InfoBar/InfoBar';
 import Input from '../components/Input/Input';
-
-import './Chat.css'
-import VideoContainer from "../components/Video/VideoContainer";
+import VideoContainer from '../components/Video/VideoContainer';
+import VideoCountdown from "../components/Video/VideoCountdown";
 
 const ENDPOINT = 'https://in-touch-chat.herokuapp.com/';
 
@@ -68,19 +69,23 @@ const Chat = ({ location }) => {
 
   return (
     isAuthenticated ? (
+      <>
     <span style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap'}}>
     <div className="videoContainer" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           <VideoContainer />
       </div>
-    <div className="outerContainer" style={{textAlign: 'center', border: '1px solid black', padding: '30px', marginTop: '5rem'}}>
-     <InfoBar room={room} />
-      <div className="container" style={{position: 'relative', bottom: '2rem', overflowY: 'auto', maxHeight: '20rem',}}>
-          <Messages messages={messages} name={name} />
+    <div className="outerContainer" style={{textAlign: 'center', border: '1px solid black', padding: '30px'}}>
+      <InfoBar room={room} />
+      <div className="container" style={{height: '20rem', overflowY: 'auto', marginBottom: '4rem'}}>
+          <Messages messages={messages} name={name}/>
           <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
       </div>
       <TextContainer users={users}/>
     </div>
     </span>
+    <div style={{margin: '5rem 15rem 0 0'}}>
+    </div>
+    </>
     ) :
     (
       <h1>User is not authenticated</h1>

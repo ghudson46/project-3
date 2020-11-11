@@ -5,9 +5,6 @@ import onlineIcon from '../../icons/onlineIcon.png';
 // Welcomes the user and shows them who else is in the room.
 const TextContainer = ({ users }) => (
   <div className="textContainer">
-    <div>
-      <h2>Chat with the other members of the room <span role="img" aria-label="emoji"></span></h2>
-    </div>
     {
       users
         ? (
